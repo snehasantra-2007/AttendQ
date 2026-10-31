@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar | AttendQ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="app-body">
+
+    <aside class="sidebar">
+        <div class="brand">Attend<span>Q</span></div>
+        <p class="sidebar-label">MENU</p>
+
+        <nav class="nav-menu">
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+            <a href="subjects.html" class="nav-link">My Subjects</a>
+            <a href="calendar.html" class="nav-link active">Calendar</a>
+            <a href="calculator.html" class="nav-link">Attendance Calculator</a>
+            <a href="profile.html" class="nav-link">Profile</a>
+        </nav>
+
+        <button class="logout-button" id="logoutButton">↗ Log Out</button>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">YOUR SCHEDULE</p>
+                <h1>Calendar<span class="heading-dot">.</span></h1>
+                <p class="muted">Keep track of your classes and attendance.</p>
+            </div>
+            <div class="semester-badge">ACADEMIC YEAR 2026–27</div>
+        </header>
+
+        <section class="calendar-layout">
+
+            <div class="content-card calendar-card">
+                <div class="calendar-heading">
+                    <div>
+                        <p class="eyebrow">MONTHLY OVERVIEW</p>
+                        <h2 id="monthTitle">October 2026</h2>
+                    </div>
+                    <div class="calendar-controls">
+                        <button id="prevMonth" class="calendar-nav" aria-label="Previous month">←</button>
+                        <button id="todayButton" class="today-button">Today</button>
+                        <button id="nextMonth" class="calendar-nav" aria-label="Next month">→</button>
+                    </div>
+                </div>
+
+                <div class="calendar-weekdays">
+                    <span>MON</span>
+                    <span>TUE</span>
+                    <span>WED</span>
+                    <span>THU</span>
+                    <span>FRI</span>
+                    <span>SAT</span>
+                    <span>SUN</span>
+                </div>
+
+                <div id="calendarDays" class="calendar-days"></div>
+
+                <div class="calendar-legend">
+                    <span><i class="legend-dot scheduled"></i> Classes scheduled</span>
+                    <span><i class="legend-dot selected-dot"></i> Selected date</span>
+                    <span><i class="legend-dot today-dot"></i> Today</span>
+                </div>
+            </div>
+
+            <div class="content-card schedule-card">
+                <p class="eyebrow">DAILY SCHEDULE</p>
+                <h2 id="selectedDateTitle">Select a date</h2>
+                <p class="muted" id="scheduleSubtitle">Your classes will appear here.</p>
+
+                <div id="dailySchedule" class="daily-schedule"></div>
+            </div>
+
+        </section>
+
+        <p class="dashboard-footer">AttendQ · Your attendance, organised.</p>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Calculator | AttendQ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="app-body">
+
+    <aside class="sidebar">
+        <div class="brand">Attend<span>Q</span></div>
+        <p class="sidebar-label">MENU</p>
+
+        <nav class="nav-menu">
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+            <a href="subjects.html" class="nav-link">My Subjects</a>
+            <a href="calendar.html" class="nav-link">Calendar</a>
+            <a href="calculator.html" class="nav-link active">Attendance Calculator</a>
+            <a href="profile.html" class="nav-link">Profile</a>
+        </nav>
+
+        <button class="logout-button" id="logoutButton">↗ Log Out</button>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">PLAN SMARTER</p>
+                <h1>Attendance Calculator<span class="heading-dot">.</span></h1>
+                <p class="muted">Know where you stand before you miss a class.</p>
+            </div>
+            <div class="semester-badge">TARGET: 75%</div>
+        </header>
+
+        <section class="calculator-layout">
+
+            <div class="content-card calculator-card">
+                <p class="eyebrow">CALCULATE YOUR ATTENDANCE</p>
+                <h2>Enter your numbers</h2>
+                <p class="muted calculator-description">
+                    Enter the classes attended and total classes conducted for a subject.
+                </p>
+
+                <form id="attendanceForm" class="attendance-form">
+                    <div class="form-field">
+                        <label for="subjectSelect">Choose subject</label>
+                        <select id="subjectSelect">
+                            <option value="">Enter manually</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="attendedInput">Classes attended</label>
+                        <input
+                            type="number"
+                            id="attendedInput"
+                            min="0"
+                            step="1"
+                            placeholder="e.g. 32"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-field">
+                        <label for="totalInput">Total classes conducted</label>
+                        <input
+                            type="number"
+                            id="totalInput"
+                            min="1"
+                            step="1"
+                            placeholder="e.g. 40"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-field">
+                        <label for="targetInput">Target attendance (%)</label>
+                        <input
+                            type="number"
+                            id="targetInput"
+                            min="1"
+                            max="100"
+                            step="1"
+                            value="75"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="calculate-button">
+                        Calculate attendance ↗
+                    </button>
+                </form>
+
+                <p class="calculator-note">
+                    This calculator assumes every future class has equal attendance weight.
+                </p>
+            </div>
+
+            <div class="content-card calculator-result">
+                <p class="eyebrow">YOUR RESULTS</p>
+                <h2>Attendance summary</h2>
+
+                <div class="result-percentage">
+                    <span id="resultPercentage">—</span>
+                    <span class="result-label">CURRENT ATTENDANCE</span>
+                </div>
+
+                <div class="result-progress-track">
+                    <div id="resultProgress" class="result-progress-fill"></div>
+                </div>
+
+                <div id="resultStatus" class="result-status">
+                    Enter your details to see your results.
+                </div>
+
+                <div class="result-metrics">
+                    <div class="result-metric">
+                        <span>Classes missed</span>
+                        <strong id="missedResult">—</strong>
+                    </div>
+                    <div class="result-metric">
+                        <span>Classes to target</span>
+                        <strong id="neededResult">—</strong>
+                    </div>
+                    <div class="result-metric">
+                        <span>Classes you can miss</span>
+                        <strong id="safeMissResult">—</strong>
+                    </div>
+                </div>
+
+                <div id="resultExplanation" class="result-explanation">
+                    Your calculation will appear here.
+                </div>
+            </div>
+
+        </section>
+
+        <p class="dashboard-footer">AttendQ · Make every class count.</p>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

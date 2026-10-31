@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | AttendQ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="app-body">
+
+    <aside class="sidebar">
+        <a href="dashboard.html" class="brand">
+            <span class="brand-icon">A</span>
+            <span>AttendQ</span>
+        </a>
+
+        <nav class="nav-menu">
+            <a href="dashboard.html" class="nav-link active">
+                <span>⌂</span> Dashboard
+            </a>
+            <a href="subjects.html" class="nav-link">
+                <span>▦</span> My Subjects
+            </a>
+            <a href="calendar.html" class="nav-link">
+                <span>▣</span> Calendar
+            </a>
+            <a href="calculator.html" class="nav-link">
+                <span>⌗</span> Calculator
+            </a>
+            <a href="profile.html" class="nav-link">
+                <span>♙</span> Profile
+            </a>
+        </nav>
+
+        <button class="logout-button" id="logoutButton">
+            ↪ &nbsp; Log Out
+        </button>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">YOUR SEMESTER AT A GLANCE</p>
+                <h1>Dashboard</h1>
+                <p class="muted">
+                    Good morning, <span id="studentName">Student</span> 👋
+                </p>
+            </div>
+
+            <div class="semester-badge">Semester 3</div>
+        </header>
+
+        <!-- Attendance summary -->
+        <section class="stats-grid">
+
+            <article class="stat-card">
+                <p>Overall Attendance</p>
+                <h2 id="overallAttendance">76%</h2>
+                <span class="status-text">Current semester</span>
+            </article>
+
+            <article class="stat-card">
+                <p>Total Classes</p>
+                <h2 id="totalClasses">215</h2>
+                <span class="status-text">Across all subjects</span>
+            </article>
+
+            <article class="stat-card">
+                <p>Classes Attended</p>
+                <h2 id="attendedClasses">178</h2>
+                <span class="status-text positive">Present</span>
+            </article>
+
+            <article class="stat-card">
+                <p>Classes Missed</p>
+                <h2 id="missedClasses">37</h2>
+                <span class="status-text negative">Absent</span>
+            </article>
+
+        </section>
+
+        <!-- Main dashboard content -->
+        <section class="dashboard-grid">
+
+            <article class="content-card">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Subject-wise Attendance</h2>
+                        <p class="muted">
+                            Your attendance across all subjects
+                        </p>
+                    </div>
+
+                    <a href="subjects.html" class="view-link">
+                        View all ↗
+                    </a>
+                </div>
+
+                <div id="subjectProgress" class="subject-progress">
+
+                    <!-- Filled by JavaScript -->
+
+                </div>
+
+            </article>
+
+            <article class="content-card">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Upcoming Classes</h2>
+                        <p class="muted">Your schedule at a glance</p>
+                    </div>
+
+                    <a href="calendar.html" class="view-link">
+                        Calendar ↗
+                    </a>
+                </div>
+
+                <div class="upcoming-list">
+
+                    <div class="class-item">
+                        <div class="class-icon blue-icon">W</div>
+                        <div class="class-details">
+                            <h3>Web Technology</h3>
+                            <p>09:00 AM – 10:00 AM</p>
+                        </div>
+                        <span class="class-status">Upcoming</span>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-icon purple-icon">D</div>
+                        <div class="class-details">
+                            <h3>DSA (C++)</h3>
+                            <p>11:00 AM – 12:00 PM</p>
+                        </div>
+                        <span class="class-status">Upcoming</span>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-icon yellow-icon">M</div>
+                        <div class="class-details">
+                            <h3>Data Mining</h3>
+                            <p>02:00 PM – 03:00 PM</p>
+                        </div>
+                        <span class="class-status">Upcoming</span>
+                    </div>
+
+                    <div class="class-item">
+                        <div class="class-icon green-icon">P</div>
+                        <div class="class-details">
+                            <h3>Probability & Distribution</h3>
+                            <p>04:00 PM – 05:00 PM</p>
+                        </div>
+                        <span class="class-status">Upcoming</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+        <!-- Attendance reminder -->
+        <section class="content-card reminder-card">
+
+            <div class="reminder-icon">↗</div>
+
+            <div class="reminder-content">
+                <h2>Stay ahead of your attendance target</h2>
+                <p class="muted">
+                    Check how many classes you can miss and still remain
+                    above your required attendance percentage.
+                </p>
+            </div>
+
+            <a href="calculator.html" class="primary-link">
+                Open Calculator →
+            </a>
+
+        </section>
+
+        <footer class="dashboard-footer">
+            AttendQ <span>·</span> Your attendance, under control.
+        </footer>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

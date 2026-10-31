@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | AttendQ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="login-body">
+
+    <main class="login-card">
+
+        <a href="index.html" class="brand">
+            <span class="brand-icon">A</span>
+            <span>AttendQ</span>
+        </a>
+
+        <h1>Sign in to your account</h1>
+        <p class="subtitle">
+            Enter your university credentials to continue.
+        </p>
+
+        <form id="loginForm">
+
+            <label for="registration">
+                Registration No
+            </label>
+
+            <input
+                type="text"
+                id="registration"
+                name="registration"
+                placeholder="Enter your registration number"
+                autocomplete="username"
+                required
+            >
+
+            <label for="password">
+                Password
+            </label>
+
+            <div class="password-box">
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required
+                >
+
+                <button
+                    type="button"
+                    id="togglePassword"
+                    aria-label="Show password"
+                >◉</button>
+            </div>
+
+            <p id="errorMessage" class="error-message"></p>
+
+            <button type="submit" class="login-button">
+                Sign In
+            </button>
+
+        </form>
+
+        <p class="login-footer">
+            AttendQ · Your attendance, under control.
+        </p>
+
+    </main>
+
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        const passwordInput = document.getElementById("password");
+        const togglePassword = document.getElementById("togglePassword");
+        const errorMessage = document.getElementById("errorMessage");
+
+        togglePassword.addEventListener("click", function () {
+            const hidden = passwordInput.type === "password";
+
+            passwordInput.type = hidden ? "text" : "password";
+            togglePassword.setAttribute(
+                "aria-label",
+                hidden ? "Hide password" : "Show password"
+            );
+        });
+
+        loginForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const registration =
+                document.getElementById("registration").value.trim();
+
+            const password = passwordInput.value;
+
+            if (!registration || !password) {
+                errorMessage.textContent =
+                    "Please enter your registration number and password.";
+                return;
+            }
+
+            // Demo login only — not real authentication.
+            localStorage.setItem("attendqRegistration", registration);
+
+            window.location.href = "dashboard.html";
+        });
+    </script>
+
+</body>
+</html>

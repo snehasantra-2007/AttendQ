@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Subjects | AttendQ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="app-body">
+
+    <aside class="sidebar">
+        <a href="dashboard.html" class="brand">
+            <span class="brand-icon">A</span>
+            <span>AttendQ</span>
+        </a>
+
+        <nav class="nav-menu">
+            <a href="dashboard.html" class="nav-link">
+                <span>⌂</span> Dashboard
+            </a>
+
+            <a href="subjects.html" class="nav-link active">
+                <span>▦</span> My Subjects
+            </a>
+
+            <a href="calendar.html" class="nav-link">
+                <span>▣</span> Calendar
+            </a>
+
+            <a href="calculator.html" class="nav-link">
+                <span>⌗</span> Calculator
+            </a>
+
+            <a href="profile.html" class="nav-link">
+                <span>♙</span> Profile
+            </a>
+        </nav>
+
+        <button class="logout-button" id="logoutButton">
+            ↪ &nbsp; Log Out
+        </button>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">ACADEMIC RECORDS</p>
+                <h1>My Subjects</h1>
+                <p class="muted">
+                    Track your attendance for every subject.
+                </p>
+            </div>
+
+            <div class="semester-badge">Semester 3</div>
+        </header>
+
+        <!-- Summary -->
+        <section class="stats-grid subject-summary">
+
+            <article class="stat-card">
+                <p>Subjects Enrolled</p>
+                <h2 id="subjectCount">6</h2>
+                <span class="status-text">Current semester</span>
+            </article>
+
+            <article class="stat-card">
+                <p>Meeting Target</p>
+                <h2 id="meetingTarget">0</h2>
+                <span class="status-text positive">At least 75%</span>
+            </article>
+
+            <article class="stat-card">
+                <p>Need Attention</p>
+                <h2 id="needAttention">0</h2>
+                <span class="status-text negative">Below 75%</span>
+            </article>
+
+            <article class="stat-card">
+                <p>Overall Attendance</p>
+                <h2 id="subjectOverall">—</h2>
+                <span class="status-text">Across all subjects</span>
+            </article>
+
+        </section>
+
+        <!-- Search and filter -->
+        <section class="content-card subject-toolbar">
+
+            <div>
+                <h2>All Subjects</h2>
+                <p class="muted">
+                    Your attendance at a glance.
+                </p>
+            </div>
+
+            <div class="subject-filters">
+                <input
+                    type="search"
+                    id="subjectSearch"
+                    placeholder="Search subjects..."
+                    aria-label="Search subjects"
+                >
+
+                <select id="attendanceFilter" aria-label="Filter subjects">
+                    <option value="all">All subjects</option>
+                    <option value="safe">75% and above</option>
+                    <option value="low">Below 75%</option>
+                </select>
+            </div>
+
+        </section>
+
+        <!-- Subject cards generated using JavaScript -->
+        <section class="subject-grid" id="subjectGrid"></section>
+
+        <p class="dashboard-footer">
+            AttendQ · Stay consistent. Stay eligible.
+        </p>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

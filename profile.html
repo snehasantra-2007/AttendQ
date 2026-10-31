@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | AttendQ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="app-body">
+
+    <aside class="sidebar">
+        <div class="brand">Attend<span>Q</span></div>
+        <p class="sidebar-label">MENU</p>
+
+        <nav class="nav-menu">
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+            <a href="subjects.html" class="nav-link">My Subjects</a>
+            <a href="calendar.html" class="nav-link">Calendar</a>
+            <a href="calculator.html" class="nav-link">Attendance Calculator</a>
+            <a href="profile.html" class="nav-link active">Profile</a>
+        </nav>
+
+        <button class="logout-button" id="logoutButton">↗ Log Out</button>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">YOUR ACCOUNT</p>
+                <h1>My Profile<span class="heading-dot">.</span></h1>
+                <p class="muted">Manage your student information.</p>
+            </div>
+            <div class="semester-badge">STUDENT PROFILE</div>
+        </header>
+
+        <section class="profile-layout">
+
+            <div class="content-card profile-identity">
+                <div class="profile-avatar" id="profileAvatar">S</div>
+                <h2 id="profileDisplayName">Student</h2>
+                <p id="profileRegistration" class="muted">Registration number not set</p>
+                <div class="profile-tag">STUDENT ACCOUNT</div>
+            </div>
+
+            <div class="content-card profile-details">
+                <div class="profile-section-heading">
+                    <div>
+                        <p class="eyebrow">PERSONAL INFORMATION</p>
+                        <h2>Account details</h2>
+                    </div>
+                </div>
+
+                <form id="profileForm" class="profile-form">
+                    <div class="form-field">
+                        <label for="displayNameInput">Display name</label>
+                        <input
+                            type="text"
+                            id="displayNameInput"
+                            placeholder="Enter your name"
+                            maxlength="60"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-field">
+                        <label for="registrationDisplay">Registration number</label>
+                        <input
+                            type="text"
+                            id="registrationDisplay"
+                            readonly
+                        >
+                    </div>
+
+                    <div class="form-field">
+                        <label for="courseDisplay">Course</label>
+                        <input
+                            type="text"
+                            id="courseDisplay"
+                            value="BSc Computer Science & Data Science"
+                            readonly
+                        >
+                    </div>
+
+                    <div class="form-field">
+                        <label for="yearDisplay">Academic year</label>
+                        <input
+                            type="text"
+                            id="yearDisplay"
+                            value="Second Year"
+                            readonly
+                        >
+                    </div>
+
+                    <button type="submit" class="calculate-button">
+                        Save changes ↗
+                    </button>
+
+                    <p id="profileMessage" class="profile-message" aria-live="polite"></p>
+                </form>
+            </div>
+
+            <div class="content-card profile-attendance">
+                <p class="eyebrow">ACADEMIC OVERVIEW</p>
+                <h2>Your attendance</h2>
+                <p class="muted">A summary based on your current subject records.</p>
+
+                <div class="profile-stat-grid">
+                    <div class="profile-stat">
+                        <span>Total subjects</span>
+                        <strong id="profileSubjectCount">—</strong>
+                    </div>
+                    <div class="profile-stat">
+                        <span>Overall attendance</span>
+                        <strong id="profileOverallAttendance">—</strong>
+                    </div>
+                    <div class="profile-stat">
+                        <span>Subjects below 75%</span>
+                        <strong id="profileLowSubjects">—</strong>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <p class="dashboard-footer">AttendQ · Your attendance, organised.</p>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
